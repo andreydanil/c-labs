@@ -33,10 +33,10 @@ int main (int argc, char *argv[]) {
 
     long addr_req;
 
-    //printf("Simulating cache with:\n");
-    //printf(" - Total lines   = %d\n", num_lines);
-    //printf(" - Lines per set = %d\n", lines_per_set);
-    //printf(" - Block size    = %d bytes\n", bytes_per_block);
+    printf("Simulating cache with:\n");
+    printf(" - Total lines   = %d\n", num_lines);
+    printf(" - Lines per set = %d\n", lines_per_set);
+    printf(" - Block size    = %d bytes\n", bytes_per_block);
  
     cache_t *cache = make_cache(num_lines, lines_per_set, bytes_per_block);
 
@@ -44,7 +44,7 @@ int main (int argc, char *argv[]) {
         addr_req = strtol(line, NULL, 0);
 
         /* simulate cache fetch with address `addr_req` */
-        //printf("Processing request: 0x%lX\n", addr_req);
+        printf("Processing request: 0x%lX\n", addr_req);
 	
 	int hit = cache_lookup(addr_req, cache);
 	if(hit)
